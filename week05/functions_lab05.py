@@ -41,7 +41,7 @@ def collect_loot(loot_options, belt):
               @@@@@@@@@@@@          
               """
     print(ascii_image3)
-    loot_roll = random.choice(range(1, len(loot_options + 1)))
+    loot_roll = random.choice(range(1, len(loot_options)  + 1))
     loot = loot_options.pop(loot_roll - 1)
     belt.append(loot)
     return loot_options, belt
@@ -116,21 +116,22 @@ def monster_attacks(m_combat_strength, health_points):
 # Lab 5: Question 7
 # Recursion
 # You can choose to go crazy, but it will reduce your health points by 5
-def inception_dream():
-
+def inception_dream(num_dream_lvls):
+    num_dream_lvls = int(num_dream_lvls)
     # Base Case
-
+    if num_dream_lvls == 1:
         print("    |    You are in the deepest dream level now")
         print("    |", end="    ")
         input("Start to go back to real life? (Press Enter)")
         print("    |    You start to regress back through your dreams to real life.")
-
+        return 2
 
     # Recursive Case
-
+    else:
         # inception_dream(5)
         # 1 + inception_dream(4)
         # 1 + 1 + inception_dream(3)
         # 1 + 1 + 1 + inception_dream(2)
         # 1 + 1 + 1 + 1 + inception_dream(1)
         # 1 + 1 + 1 + 1 + 2
+        return 1 + int(inception_dream(num_dream_lvls - 1))
