@@ -77,4 +77,3 @@ def monster_attacks(m_combat_strength, health_points):
             health_points -= m_combat_strength
             print("The monster has reduced Player's health to: " + str(health_points))
     return health_points
-
